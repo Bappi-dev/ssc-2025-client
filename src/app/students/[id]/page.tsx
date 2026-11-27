@@ -24,7 +24,8 @@ interface Student {
   phone: string;
   photoUrl: string;
   address: string;
-  facebookUrl:st
+  facebookUrl?: string;
+
 }
 
 const StudentDetalisPage = async ({

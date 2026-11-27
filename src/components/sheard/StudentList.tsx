@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import type { StudentItem } from "./StudentsCard";
 import { Filter, Search, Users } from "lucide-react";
 import StudentCard from "./StudentsCard";
 
@@ -78,7 +78,7 @@ export default function StudentsList({ students }: StudentsListProps) {
       {/* Cards Grid */}
       {filteredStudents.length > 0 ? (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filteredStudents.map((item, idx) => (
+          {filteredStudents.map((item: StudentItem, idx: number) => (
             <StudentCard
               key={item._id ?? item.id ?? String(idx)}
               student={item}
