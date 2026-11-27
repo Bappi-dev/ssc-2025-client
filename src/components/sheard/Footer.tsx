@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight, GraduationCap, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import logo from "../../../public/image/LOGO.png.webp"
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -29,12 +31,13 @@ export default function Footer() {
               href="/"
               className="group inline-flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#F6D978] to-[#B68A20] text-[#101B35] shadow-md transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105">
-                <GraduationCap size={24} />
-              </span>
+              <div className="transition duration-300 group-hover:rotate-6 group-hover:scale-105 ">
+              {/* <GraduationCap size={25} strokeWidth={2.2} /> */}
+              <Image className="rounded-full" width={60} src={logo} alt=""></Image>
+            </div>
               <span>
                 <span className="block text-sm font-extrabold tracking-wide">
-                  SHERUA ADARSHA
+                  SHERUA  ADARSHA
                 </span>
                 <span className="mt-0.5 block text-[10px] font-semibold tracking-[0.24em] text-[#9A7617]">
                   SSC BATCH 2025
