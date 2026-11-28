@@ -10,7 +10,7 @@ const AllTeacherPage = async () => {
   console.log(teachers);
 
   return (
-    <div>
+    <div className='bg-[#FFFAF4]'>
       <div>
         <h1 className="text-3xl font-bold mt-8 underline text-center">All Teacher </h1>
       </div>

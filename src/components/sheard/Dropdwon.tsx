@@ -61,7 +61,7 @@ const ProverDropdwon = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <Link href={"/dashboard"}>
+            <Link href={"/dashboard/admin"}>
               <p className="text-black font-bold text-xl flex gap-1 items-center border rounded-2xl p-2">
                 <GrUserAdmin /> Admin
               </p>
@@ -71,14 +71,19 @@ const ProverDropdwon = () => {
                 <GrUserAdmin /> Add student
               </p>
             </Link>
-            <Link href={"/dashboard/teacher"}>
+            {/* <Link href={"/dashboard/teacher"}>
               <p className="text-black font-bold text-xl flex gap-1 items-center border rounded-2xl p-2">
                 <GrUserAdmin /> Add teacher
               </p>
-            </Link>
-            <Link href={"/dashboard/my-profile"}>
+            </Link> */}
+            {/* <Link href={"/dashboard/memories"}>
               <p className="text-black font-bold text-xl flex gap-1 items-center border rounded-2xl p-2">
-                <ImProfile /> My profile
+                <ImProfile /> Add Memories
+              </p>
+            </Link> */}
+            <Link href={"/profile"}>
+              <p className="text-black font-bold text-xl flex gap-1 items-center border rounded-2xl p-2">
+                <ImProfile /> My Profile
               </p>
             </Link>
           </div>

@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight,} from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
 import ProverDropdwon from "./Dropdwon";
 import Image from "next/image";
-import logo from "../../../public/image/LOGO.png.webp"
+import logo from "../../../public/image/LOGO.png.webp";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -15,7 +15,6 @@ const navLinks = [
   { name: "Students", href: "/students" },
   { name: "Teachers", href: "/teachers" },
   { name: "Memories", href: "/memories" },
-  { name: "Events", href: "/events" },
 ];
 
 export default function Navbar() {
@@ -24,7 +23,6 @@ export default function Navbar() {
   const { data: session } = authClient.useSession();
   const user = session?.user;
   console.log(user);
-
 
   const linkClass = (href: string) =>
     `group relative font-bold rounded-lg px-3 py-2 text-[13px] text-slate-600 transition-all duration-300 hover:bg-[#D4AF37]/10 hover:text-[#9A7617] ${
@@ -35,7 +33,6 @@ export default function Navbar() {
     `rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-[#D4AF37]/10 hover:text-[#9A7617] ${
       pathname === href ? "bg-[#D4AF37]/20 text-[#9A7617]" : ""
     }`;
-    
 
   return (
     <header className="sticky top-0 z-50   backdrop-blur-xl">
@@ -45,7 +42,12 @@ export default function Navbar() {
           <Link href="/" className="group flex items-center gap-3">
             <div className="transition duration-300 group-hover:rotate-6 group-hover:scale-105 ">
               {/* <GraduationCap size={25} strokeWidth={2.2} /> */}
-              <Image className="rounded-full" width={50} src={logo} alt=""></Image>
+              <Image
+                className="rounded-full"
+                width={50}
+                src={logo}
+                alt=""
+              ></Image>
             </div>
 
             <div>
@@ -60,26 +62,29 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden items-center gap-1 lg:flex">
-  {navLinks.map((link) => {
-    if (link.name === 'Teachers') {
-      return (
-        <div key={link.name} className="relative group">
-          <Link href={link.href} className={linkClass(link.href)}>
-            {link.name}
-            <span className="absolute bottom-1 left-3 right-3 h-[2px] origin-left scale-x-0 rounded-full bg-[#D4AF37] transition-transform duration-300 group-hover:scale-x-100" />
-          </Link>
-         
-        </div>
-      );
-    }
-    return (
-      <Link key={link.name} href={link.href} className={linkClass(link.href)}>
-        {link.name}
-        <span className="absolute bottom-1 left-3 right-3 h-[2px] origin-left scale-x-0 rounded-full bg-[#D4AF37] transition-transform duration-300 group-hover:scale-x-100" />
-      </Link>
-    );
-  })}
-</div>
+            {navLinks.map((link) => {
+              if (link.name === "Teachers") {
+                return (
+                  <div key={link.name} className="relative group">
+                    <Link href={link.href} className={linkClass(link.href)}>
+                      {link.name}
+                      <span className="absolute bottom-1 left-3 right-3 h-[2px] origin-left scale-x-0 rounded-full bg-[#D4AF37] transition-transform duration-300 group-hover:scale-x-100" />
+                    </Link>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={linkClass(link.href)}
+                >
+                  {link.name}
+                  <span className="absolute bottom-1 left-3 right-3 h-[2px] origin-left scale-x-0 rounded-full bg-[#D4AF37] transition-transform duration-300 group-hover:scale-x-100" />
+                </Link>
+              );
+            })}
+          </div>
 
           {/* CTA */}
           <div className="flex gap-2">
@@ -92,7 +97,7 @@ export default function Navbar() {
             </Link>
             {session?.user ? (
               <>
-               <ProverDropdwon/>
+                <ProverDropdwon />
               </>
             ) : (
               <>

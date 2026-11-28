@@ -109,7 +109,7 @@ export default function Hero() {
 
               <Link
                 href="/memories"
-                className="group inline-flex items-center gap-3 rounded-full  from-[#F6D978] to-[#C69A2B] px-7 py-4 text-sm font-bold text-[#101B35] shadow-xl shadow-[#D4AF37]/20 transition duration-300 hover:-translate-y-1 hover:shadow-[#D4AF37]/40"
+                className="inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/5 px-7 py-4 text-sm font-semibold text-white backdrop-blur-xl transition duration-300 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 hover:text-[#F6D978]"
               >
                 <ImageIcon size={18} />
                 Explore Memories

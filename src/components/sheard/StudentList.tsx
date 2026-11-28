@@ -1,6 +1,7 @@
 "use client";
 
-import type { StudentItem } from "./StudentsCard";
+import React, { useState, useMemo } from "react";
+import { StudentItem } from "@/types/student";
 import { Filter, Search, Users } from "lucide-react";
 import StudentCard from "./StudentsCard";
 
